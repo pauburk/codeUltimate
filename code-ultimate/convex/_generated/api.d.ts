@@ -13,6 +13,7 @@ import type { ApiFromModules } from "convex/api";
 import type * as listMessages from "../listMessages";
 import type * as sendCode from "../sendCode";
 import type * as sendMessage from "../sendMessage";
+import type * as translate from "../translate";
 import type * as translateCode from "../translateCode";
 
 /**
@@ -28,5 +29,6 @@ export type API = ApiFromModules<{
   listMessages: typeof listMessages;
   sendCode: typeof sendCode;
   sendMessage: typeof sendMessage;
+  translate: typeof translate;
   translateCode: typeof translateCode;
 }>;

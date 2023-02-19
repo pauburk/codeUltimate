@@ -1,93 +1,91 @@
-/* reset */
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  line-height: 1.5;
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(fonts/Proxima-Nova/Proxima-Nova-Regular.otf);
+  font-weight: regular;
 }
 
-body {
-  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", helvetica,
-    sans-serif;
-    /* background-image: linear-gradient(160deg, #FF6962, #FF8776, #FFB092, #FFE08E, #FFD050); */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url(fonts/Source-Code-Pro/SourceCodePro-Regular.otf);
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url(fonts/SF-Mono/SFMonoRegular.otf);
+  font-weight: regular;
+}
+
+
+/* ===================================================
+BODY ETC.
+=================================================== */
+
+
+html {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-image: linear-gradient(130deg, #ff0000, #ff5a00, #ff9a00, #ffce00, #f0ff00);
+  background-size: 100vw 100vh;
 }
 
 main {
-  padding-top: 1em;
-  padding-bottom: 1em;
   width: min(1000px, 95vw);
-  margin: 0 auto;
-  /* display: flex; */
+  margin: auto;
 }
 
 #titleBox {
   padding: 12px;
-  width: min(1000px, 95vw);
-  border: solid 1px rgb(206, 212, 218);
-  border-radius: 8px;
+  width: calc(min(1000px, 95vw) - );
+  /* border: solid 1px rgb(206, 212, 218); */
+  background-image: linear-gradient(85deg,   #90EE90, #67D89A, #34BEA5, #1EA9AC, #1D80AF, #1C61B1);
+  color: white;
+  border-radius: 16px;
   margin: 24px;
+  margin-top: 48px;
   /* margin: auto; */
   /* font-size: 16px; */
 }
 
 h1 {
   text-align: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  font-size: 1.8em;
+  /* margin-top: 32px;
+  margin-bottom: 32px; */
+  font-size: 2.2em;
   font-weight: 500;
 }
 
-/* .badge {
-  text-align: center;
-  margin-bottom: 16px;
-}
-.badge span {
-  background-color: #212529;
-  color: #ffffff;
-  border-radius: 6px;
-  font-weight: bold;
-  padding: 4px 8px 4px 8px;
-  font-size: 0.75em;
-} */
-
-/* ul {
-  margin: 8px;
-  border-radius: 8px;
-  border: solid 1px lightgray;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+h2 {
+  text-align: left;
+  /* margin-top: 32px;
+  margin-bottom: 32px; */
+  font-size: 2.2em;
+  font-weight: 500;
 }
 
-ul:empty {
-  display: none;
+.sectHeading {
+  padding: 12px;
+  width: calc(min(1000px, 95vw) - );
+  /* border: solid 1px rgb(206, 212, 218); */
+  background-image: linear-gradient(-85deg,   #FB8CAB, #E65C9C, #CF278A, #AF1281, #6B0772, #360167);
+  color: white;
+  border-radius: 16px;
+  /* margin: 24px; */
+  margin-top: 48px;
+  /* margin: auto; */
+  /* font-size: 16px; */
 }
 
-li {
-  display: flex;
-  justify-content: flex-start;
-  padding: 8px 16px 8px 16px;
-  border-bottom: solid 1px lightgray;
-  font-size: 16px;
+#note {
+  margin-top: 48px;
+  margin-left: 24px;
+  margin-bottom: -12px;
 }
 
-li:last-child {
-  border: 0;
-}
 
-li span:nth-child(1) {
-  font-weight: bold;
-  margin-right: 4px;
-  white-space: nowrap;
-}
-li span:nth-child(2) {
-  margin-right: 4px;
-  word-break: break-word;
-}
-li span:nth-child(3) {
-  color: #6c757d;
-  margin-left: auto;
-  white-space: nowrap;
-} */
+/* ===================================================
+CONTAINERS
+=================================================== */
+
 
 .container {
   display: flex;
@@ -99,56 +97,111 @@ li span:nth-child(3) {
 }
 
 form {
-  /* flex: 1; */
-  /* width: 50%; */
+  flex: 1;
+  /* width: 45%; */
   /* width: min(480px, 42.75vw); */
   /* width: 100%; */
   /* display: flex; */
   /* justify-content: center; */
 }
 
+::placeholder {
+  opacity: 1;
+  color: rgb(110, 110, 110);
+}
+
+/* .newCode input:not([type]) { */
+textarea {
+  height: min(400px, 70vh);
+  width: calc(min(1000px, 95vw) / 2 - 64px);
+  padding: 1em 12px 0px 12px;
+  margin: 0 0 0 0;
+  color: rgb(33, 37, 41);
+  background-color: rgb(255, 255, 255);
+  border: hidden;
+  font-family: "SF Mono";
+  font-size: 16px;
+  resize: none;
+  white-space: nowrap;
+  overflow-x:scroll;
+}
+
 input {
-  /* flex: 1; */
-  
   padding: 6px 12px 6px 12px;
-  border: solid 1px rgb(206, 212, 218);
-  border-radius: 8px;
+  /* border: solid 1px rgb(206, 212, 218); */
+  border: hidden;
+  /* border-radius: 8px; */
   font-size: 16px;
 }
 
-.newCode input:not([type]) {
-  height: min(400px, 70vh);
-  width: 100%;
-  color: rgb(33, 37, 41);
-  /* margin-bottom: min(10px, 1.75vw); */
-  /* width: 100%; */
-}
-
-input[type="submit"],
-button {
-  margin-top: min(16px, 2.8vw);
+input[type="submit"] {
+  margin-top: 16px;
+  border-radius: 8px;
   color: white;
   background: lightblue;
   background-color: rgb(49, 108, 244);
+  font-family: "Proxima Nova";
 }
 
-input[type="submit"]:hover,
-button:hover {
+input[type="submit"]:hover {
   background-color: rgb(41, 93, 207);
+  cursor: pointer;
 }
 
-input[type="submit"]:disabled,
-button:disabled {
-  background-color: rgb(122, 160, 248);
+input[type="submit"]:disabled {
+  background-color: rgb(86, 133, 240);
+}
+
+input[type="reset"] {
+  margin-top: 16px;
+  margin-left: 16px;
+  border-radius: 8px;
+  color: rgb(33, 37, 41);
+  background-color: rgb(255, 255, 255);
+  font-family: "Proxima Nova";
+}
+
+input[type="reset"]:hover {
+  background-color: rgb(230, 230, 230);
+  cursor: pointer;
+}
+
+button {
+  padding: 6px 12px 6px 12px;
+  border: hidden;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 16px;
+  color: black;
+  /* background: lightblue; */
+  background-color: rgb(160, 160, 160);
+  /* margin-left: min(16px, 2.8vw); */
+  float: right;
+  /* margin-right: -24px; */
+  font-family: "Proxima Nova";
+}
+
+button:hover {
+  background-color: rgb(140, 140, 140);
+  cursor: pointer;
 }
 
 .translatedCode {
-  /* flex: 1; */
-  /* width: 50%; */
+  flex: 1;
   height: min(400px, 70vh);
-  padding: 6px 12px 6px 12px;
-  border: solid 1px rgb(206, 212, 218);
-  border-radius: 8px;
+  width: calc(min(1000px, 95vw) / 2 - 64px);
+  padding: 1em 12px 0px 12px;
+  margin: 0 0 0 -16px;
+  border: hidden;
+  background-color: rgb(255, 255, 255);
   color: rgb(33, 37, 41);
+  font-family: "SF Mono";
   font-size: 16px;
+  white-space: pre;
+  overflow-x:scroll;
+}
+
+.translatedCode p {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
